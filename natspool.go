@@ -43,9 +43,9 @@ func NewPoolCustom(addr string, size int, df DialFunc) (*NatsPool, error) {
 		pool = append(pool, client)
 	}
 	p := NatsPool{
-		Addr:   addr,
-		pool:   make(chan *nats.Conn, len(pool)),
-		df:     df,
+		Addr: addr,
+		pool: make(chan *nats.Conn, len(pool)),
+		df:   df,
 	}
 	for i := range pool {
 		p.pool <- pool[i]

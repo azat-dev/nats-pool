@@ -14,7 +14,6 @@ type NatsPool struct {
 	df   DialFunc
 
 	stopOnce sync.Once
-	stopCh   chan bool
 
 	// The network/address that the pool is connecting to. These are going to be
 	// whatever was passed into the New function. These should not be
@@ -47,7 +46,6 @@ func NewPoolCustom(addr string, size int, df DialFunc) (*NatsPool, error) {
 		Addr:   addr,
 		pool:   make(chan *nats.Conn, len(pool)),
 		df:     df,
-		stopCh: make(chan bool),
 	}
 	for i := range pool {
 		p.pool <- pool[i]
@@ -94,10 +92,6 @@ func (p *NatsPool) Put(conn *nats.Conn) {
 // Assuming there are no other connections waiting to be Put back this method
 // effectively closes and cleans up the pool.
 func (p *NatsPool) Empty() {
-	p.stopOnce.Do(func() {
-		p.stopCh <- true
-		<-p.stopCh
-	})
 	var conn *nats.Conn
 	for {
 		select {

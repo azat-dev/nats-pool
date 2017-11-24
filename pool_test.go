@@ -1,4 +1,4 @@
-package natspool
+package nats_pool
 
 import (
 	"sync"
@@ -12,7 +12,7 @@ import (
 
 func TestPool(t *T) {
 	size := 10
-	pool, err := New("nats://localhost:4222", size)
+	pool, err := New("nats://localhost:32776", size)
 	require.Nil(t, err)
 
 	var wg sync.WaitGroup

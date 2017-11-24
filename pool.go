@@ -1,4 +1,4 @@
-package natspool
+package nats_pool
 
 import (
 	"github.com/nats-io/go-nats"

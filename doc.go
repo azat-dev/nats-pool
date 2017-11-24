@@ -55,4 +55,4 @@
 //		return client, nil
 //	}
 //	p, err := pool.NewCustom("nats://localhost:4222", 10, df)
-package natspool
+package nats_pool

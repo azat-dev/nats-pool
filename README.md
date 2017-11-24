@@ -1,13 +1,13 @@
-# natspool
+# nats-pool
 A simple, automatically expanding/cleaning thread-safe connection pool for [nats.io](http://nats.io/).
 
 ## Installation
 
-    go get github.com/akaumov/natspool
+    go get github.com/akaumov/nats-pool
     
 ## Documentation
     
-   [Documentation](https://godoc.org/github.com/akaumov/natspool)
+   [Documentation](https://godoc.org/github.com/akaumov/nats-pool)
     
 ## Testing
     

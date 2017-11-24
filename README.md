@@ -11,7 +11,7 @@ A simple, automatically expanding/cleaning thread-safe connection pool for [nats
     
 ## Testing
     
-    go test github.com/akaumov/natspool
+    go test github.com/akaumov/nats-pool
     
 The test action assumes you have the following running:
 

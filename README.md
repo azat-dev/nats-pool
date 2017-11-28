@@ -1,5 +1,7 @@
 # nats-pool
-A simple, automatically expanding/cleaning thread-safe connection pool for [nats.io](http://nats.io/).
+> A simple, automatically expanding/cleaning thread-safe connection pool for [nats.io](http://nats.io/).
+
+[![GoDoc](https://godoc.org/github.com/akaumov/nats-pool?status.png)](https://godoc.org/github.com/akaumov/nats-pool)
 
 ## Installation
 
